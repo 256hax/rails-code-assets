@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pt_trainer.name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @pt_trainer.birthdate %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @pt_trainer.sex %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pt_trainer.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pt_trainer.title %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @pt_trainer.comment %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @pt_trainer.area %>
+</p>
+
+<%= link_to 'Edit', edit_pt_trainer_path(@pt_trainer) %> |
+<%= link_to 'Back', pt_trainers_path %>

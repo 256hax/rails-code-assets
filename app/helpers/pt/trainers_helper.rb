@@ -1,0 +1,2 @@
+module Pt::TrainersHelper
+end
