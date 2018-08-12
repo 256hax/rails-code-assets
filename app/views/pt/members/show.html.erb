@@ -35,5 +35,10 @@
   <%= @pt_member.area %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@pt_member.image.to_s) %>
+</p>
+
 <%= link_to 'Edit', edit_pt_member_path(@pt_member) %> |
 <%= link_to 'Back', pt_members_path %>

@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
+    <%= form.date_select :birthdate, :start_year => 1940, :end_year => 2020, :selected => 1980 %>
   </div>
 
   <div class="field">
@@ -44,6 +44,12 @@
   <div class="field">
     <%= form.label :area %>
     <%= form.text_field :area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <%= image_tag(pt_member.image.to_s) if pt_member.image.present? %>
   </div>
 
   <div class="actions">

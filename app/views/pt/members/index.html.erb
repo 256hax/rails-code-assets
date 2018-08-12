@@ -12,6 +12,7 @@
       <th>Title</th>
       <th>Comment</th>
       <th>Area</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= pt_member.title %></td>
         <td><%= pt_member.comment %></td>
         <td><%= pt_member.area %></td>
+        <td><%= image_tag(pt_member.image.to_s, :width => 100) %></td>
         <td><%= link_to 'Show', pt_member %></td>
         <td><%= link_to 'Edit', edit_pt_member_path(pt_member) %></td>
         <td><%= link_to 'Destroy', pt_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
