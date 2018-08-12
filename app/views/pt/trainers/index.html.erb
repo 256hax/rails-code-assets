@@ -12,6 +12,7 @@
       <th>Title</th>
       <th>Comment</th>
       <th>Area</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= pt_trainer.title %></td>
         <td><%= pt_trainer.comment %></td>
         <td><%= pt_trainer.area %></td>
+        <td><%= image_tag(pt_trainer.image.to_s, :width => 100) %></td>
         <td><%= link_to 'Show', pt_trainer %></td>
         <td><%= link_to 'Edit', edit_pt_trainer_path(pt_trainer) %></td>
         <td><%= link_to 'Destroy', pt_trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

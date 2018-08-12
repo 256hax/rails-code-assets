@@ -13,3 +13,4 @@ class CreatePtTrainers < ActiveRecord::Migration[5.2]
     end
   end
 end
+#$ rails g scaffold pt::trainer name:string birthdate:date sex:integer email:string title:string comment:text area:string

@@ -35,5 +35,10 @@
   <%= @pt_trainer.area %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@pt_trainer.image.to_s) %>
+</p>
+
 <%= link_to 'Edit', edit_pt_trainer_path(@pt_trainer) %> |
 <%= link_to 'Back', pt_trainers_path %>
