@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Birthdate</th>
       <th>Sex</th>
@@ -13,6 +14,7 @@
       <th>Comment</th>
       <th>Area</th>
       <th>Image</th>
+      <th>PT Event ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,7 @@
   <tbody>
     <% @pt_trainers.each do |pt_trainer| %>
       <tr>
+        <td><%= pt_trainer.id %></td>
         <td><%= pt_trainer.name %></td>
         <td><%= pt_trainer.birthdate %></td>
         <td><%= pt_trainer.sex %></td>
@@ -28,6 +31,11 @@
         <td><%= pt_trainer.comment %></td>
         <td><%= pt_trainer.area %></td>
         <td><%= image_tag(pt_trainer.image.to_s, :width => 100) %></td>
+        <td>
+          <% pt_trainer.pt_events.each do |pt_event| %>
+            <%= pt_event.id %>,
+          <% end %>
+        </td>
         <td><%= link_to 'Show', pt_trainer %></td>
         <td><%= link_to 'Edit', edit_pt_trainer_path(pt_trainer) %></td>
         <td><%= link_to 'Destroy', pt_trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

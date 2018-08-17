@@ -1,0 +1,52 @@
+<%= form_with(model: pt_event, local: true) do |form| %>
+  <% if pt_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pt_event.errors.count, "error") %> prohibited this pt_event from being saved:</h2>
+
+      <ul>
+      <% pt_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :the_date %>
+    <%= form.date_select :the_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area %>
+    <%= form.text_field :area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pt_trainer_id %>
+    <%= form.text_field :pt_trainer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

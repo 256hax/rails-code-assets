@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pt_event.name %>
+</p>
+
+<p>
+  <strong>The date:</strong>
+  <%= @pt_event.the_date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pt_event.title %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @pt_event.comment %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @pt_event.area %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @pt_event.image %>
+</p>
+
+<p>
+  <strong>Pt trainer ID:</strong>
+  <%= @pt_event.pt_trainer.id %>
+</p>
+
+<%= link_to 'Edit', edit_pt_event_path(@pt_event) %> |
+<%= link_to 'Back', pt_events_path %>
