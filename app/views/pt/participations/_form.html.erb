@@ -1,0 +1,27 @@
+<%= form_with(model: pt_participation, local: true) do |form| %>
+  <% if pt_participation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pt_participation.errors.count, "error") %> prohibited this pt_participation from being saved:</h2>
+
+      <ul>
+      <% pt_participation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pt_event_id %>
+    <%= form.text_field :pt_event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pt_member_id %>
+    <%= form.text_field :pt_member_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

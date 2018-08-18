@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :pt do
+    resources :participations
+  end
+  namespace :pt do
     resources :events
     resources :members
     resources :trainers

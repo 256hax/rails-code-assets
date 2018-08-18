@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pt Participations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pt event</th>
+      <th>Pt member</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pt_participations.each do |pt_participation| %>
+      <tr>
+        <td><%= pt_participation.pt_event %></td>
+        <td><%= pt_participation.pt_member %></td>
+        <td><%= link_to 'Show', pt_participation %></td>
+        <td><%= link_to 'Edit', edit_pt_participation_path(pt_participation) %></td>
+        <td><%= link_to 'Destroy', pt_participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pt Participation', new_pt_participation_path %>
