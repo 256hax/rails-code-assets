@@ -1,5 +1,6 @@
 class Pt::MembersController < ApplicationController
   before_action :set_pt_member, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_member! # Devise
 
   # GET /pt/members
   # GET /pt/members.json

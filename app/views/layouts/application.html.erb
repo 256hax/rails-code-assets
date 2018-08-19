@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% if admin_member_signed_in? %>
+      <p><%= link_to "ログアウト", destroy_admin_member_session_path, method: :delete %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
