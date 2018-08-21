@@ -4,8 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {name: '山田 太郎'}
 # column: value
 #
-two: {}
-# column: value
+two:    {name: '勅使河原 そういちろう'}
+three:  {name: '田中 ミユ'}
