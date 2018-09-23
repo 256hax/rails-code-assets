@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inbox.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @inbox.email %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @inbox.body %>
+</p>
+
+<%= link_to 'Edit', edit_inbox_path(@inbox) %> |
+<%= link_to 'Back', inboxes_path %>
