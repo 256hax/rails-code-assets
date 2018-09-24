@@ -1,0 +1,2 @@
+module Inboxes::SpamsHelper
+end

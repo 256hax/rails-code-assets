@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inboxes Spams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spam flag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inboxes_spams.each do |inboxes_spam| %>
+      <tr>
+        <td><%= inboxes_spam.spam_flag %></td>
+        <td><%= link_to 'Show', inboxes_spam %></td>
+        <td><%= link_to 'Edit', edit_inboxes_spam_path(inboxes_spam) %></td>
+        <td><%= link_to 'Destroy', inboxes_spam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inboxes Spam', new_inboxes_spam_path %>

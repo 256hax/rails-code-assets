@@ -9,3 +9,4 @@ class CreateInboxes < ActiveRecord::Migration[5.2]
     end
   end
 end
+# $ rails g scaffold inbox name:string email:string body:text

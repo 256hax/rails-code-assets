@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spam flag:</strong>
+  <%= @inboxes_spam.spam_flag %>
+</p>
+
+<%= link_to 'Edit', edit_inboxes_spam_path(@inboxes_spam) %> |
+<%= link_to 'Back', inboxes_spams_path %>
