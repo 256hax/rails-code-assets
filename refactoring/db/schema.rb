@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_040805) do
+ActiveRecord::Schema.define(version: 2018_09_24_092231) do
 
   create_table "inboxes", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_040805) do
     t.boolean "spam_flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "inbox_id"
+    t.index ["inbox_id"], name: "index_inboxes_spams_on_inbox_id", unique: true
   end
 
 end

@@ -69,6 +69,6 @@ class Inboxes::SpamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inboxes_spam_params
-      params.require(:inboxes_spam).permit(:spam_flag)
+      params.require(:inboxes_spam).permit(:spam_flag, :inbox_id)
     end
 end
