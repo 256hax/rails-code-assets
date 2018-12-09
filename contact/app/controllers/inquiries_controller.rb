@@ -25,6 +25,13 @@ class InquiriesController < ApplicationController
   end
 
   def index
+    set_kintone_api # call concerns/kintone_variable.rb
+
+    fields = ["record_id", "Customer", "Detail", "ReceptionDate"]
+    #query = "order by record_id asc limit 10 offset 20"
+    query = ""
+
+    @inquiries = @api.records.get(@app_id, query, fields)
   end
 
   private
