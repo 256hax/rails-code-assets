@@ -1,12 +1,6 @@
-
-=begin
-RoR Controller Sample
-Copyright (c) 2018 Cybozu
-Licensed under the MIT License
-=end
-
 require 'kintone'
 class InquiriesController < ApplicationController
+  include KintoneVariable
 
   def new
   end
@@ -14,16 +8,7 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
-      # ENV => require "/.env" file
-      kintone_service_url = "#{ENV["KINTONE_SUBDOMAIN"]}.cybozu.com"
-      kintone_api_token = ENV["KINTONE_API_TOKEN"]
-      # api = Kintone::Api.new("{サブドメイン名}.cybozu.com", "{APIトークン}")
-      api = Kintone::Api.new(kintone_service_url, kintone_api_token)
-      # app_id = {アプリケーションID}
-      app_id = ENV["KINTONE_CONTACT_APP_ID"]
-      p kintone_service_url
-      p kintone_api_token
-      p app_id
+      set_kintone_api # call concerns/kintone_variable.rb
 
       # Record register(single record)
       # Use Hash
@@ -32,11 +17,14 @@ class InquiriesController < ApplicationController
                 "QType" => {"value" => inquiry_params[:contact_type]},
                 "Detail" => {"value" => inquiry_params[:details]}
                 }
-      api.record.register(app_id, record)
-      redirect_to root_path
+      @api.record.register(@app_id, record)
+      redirect_to inquiries_path
     else
       render 'new'
     end
+  end
+
+  def index
   end
 
   private
