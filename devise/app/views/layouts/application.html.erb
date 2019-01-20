@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <!-- Flash Messages -->
+    <div class="notice">
+      <%= notice %>
+    </div>
+    <div class="alert">
+      <%= alert %>
+    </div>
+    <!-- /Flash Messages -->
     <%= yield %>
   </body>
+  <!-- ここから -->
+  <div class="session-control-box">
+    <% if signed_in? %>
+      <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+  <!-- ここまで -->
 </html>
